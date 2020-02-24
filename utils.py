@@ -40,7 +40,7 @@ def computeProbability(target_feature, bin, dataframe):
 
  # return the result
     return (probability)
-
+# This data could be used to determine risk information on someone should be accepted for a loan
 def computeDefaultRisk(column, target_feature, bin, dataframe):
     count = 0.0
     counts = 0.0
@@ -56,6 +56,12 @@ def computeDefaultRisk(column, target_feature, bin, dataframe):
     return (probability_two/probability)
 
 
+#def predictDefaultRisk(target_feature, ):
+#for g in range(len(rate)):
+#   rate[g] = rate[g] * amount[g] / sum(amount)
+#rate = sum(rate)
+
+
 # Using DataFrame.insert() to add a column
 newloans_data_df = loadAndCleanData("newLoans.csv")
 df = pd.DataFrame(newloans_data_df)
@@ -63,5 +69,4 @@ df.insert(2, "AbsoluteRating", "DistributedRating", True)
 df.insert(3, "DistributedRating", True)
 
 
-
-#def predictDefaultRisk(data,risk):
+#def rateLoanDistribution(group, weight, data):
